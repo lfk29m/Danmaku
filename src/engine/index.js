@@ -39,6 +39,7 @@ export default function(framing, setup, render, remove) {
       ++this._.position;
     }
     setup(this._.stage, pendingList);
+
     for (i = 0; i < pendingList.length; i++) {
       cmt = pendingList[i];
       cmt.y = allocate.call(this, cmt);

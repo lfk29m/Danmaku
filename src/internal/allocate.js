@@ -51,5 +51,13 @@ export default function(cmt) {
   if (cmt.mode === 'bottom') {
     return this._.stage.height - cmt.height - channel % this._.stage.height;
   }
-  return channel % (this._.stage.height - cmt.height);
+
+  // random
+  if(cmt.height === 0) return 0
+  let totalCount = Math.floor((this._.stage.height - cmt.height) / cmt.height)
+  function getRandom(min,max){
+    let cur = Math.floor(Math.random()*(max-min+1))+min;
+    return cur
+  }
+  return getRandom(1,totalCount) * cmt.height
 }
